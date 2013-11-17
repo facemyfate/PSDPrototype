@@ -32,6 +32,50 @@ public class Main {
 		popStudentsWithCoursesAndGrades("TingWen", "2109930T", "AP3", "ALG3","IS3", "PSD3", "PL3", "E", "A", "B", "C", "D");
 	}
 
+	public static void exportOne(String tempstud, String ofname){
+		try {
+			FileWriter file = new FileWriter(ofname);
+
+			file.append("StudentID");
+			file.append(",");
+			file.append("StudentName");
+			file.append(",");
+			file.append("AP3");
+			file.append(",");
+			file.append("ALG3");
+			file.append(",");
+			file.append("IS3");
+			file.append(",");
+			file.append("PSD3");
+			file.append(",");
+			file.append("PL3");
+			file.append("\n");
+
+			for (Student afterselect : students){
+				if(afterselect.getStudentName().equalsIgnoreCase(tempstud)) {
+					System.out.println(afterselect.getStudentName());
+					ArrayList<Course> allc = grades.get(afterselect);
+					file.append(afterselect.getStudentID());
+					file.append(",");
+					file.append(afterselect.getStudentName());
+					file.append(",");
+					for (Course c : allc) {
+						file.append(c.getcourseGrade());
+						file.append(",");
+					}
+					//file.append("\n");
+				}
+
+			}
+			file.flush();
+			file.close();
+
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public static void exportAll(String fname){
 
 		try {
@@ -58,58 +102,18 @@ public class Main {
 				file.append(",");
 				file.append(all.getStudentName());
 				file.append(",");
-				for (Course c : allc){
+				for (Course c : allc) {
 					file.append(c.getcourseGrade());
 					file.append(",");
 				}
 				file.append("\n");
 			}
+
 			file.flush();
 			file.close();
+
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public static void exportOne(String input, String fname){
-		try{
-			FileWriter file = new FileWriter(fname);
-
-			file.append("StudentID");
-			file.append(",");
-			file.append("StudentName");
-			file.append(",");
-			file.append("AP3");
-			file.append(",");
-			file.append("ALG3");
-			file.append(",");
-			file.append("IS3");
-			file.append(",");
-			file.append("PSD3");
-			file.append(",");
-			file.append("PL3");
-			file.append("\n");
-
-			for (Student afterselect :students){
-				if(afterselect.getStudentName().equalsIgnoreCase(input)){
-					System.out.println(afterselect.getStudentName());
-					ArrayList<Course> selco = grades.get(afterselect);
-					file.append(afterselect.getStudentID());
-					file.append(",");
-					file.append(afterselect.getStudentName());
-					file.append(",");
-					for (Course studco : selco){
-						file.append(studco.getcourseGrade());
-						file.append(",");
-					}
-				}
-			}
-
-			file.flush();
-			file.close();
-		}
-		catch (IOException e){
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -140,7 +144,7 @@ public class Main {
 			System.err.println("Please select from choice 1 to 5\n");
 			gradesMenu();
 		}
-		scanner.close();
+
 	}
 	public static void selection(int i){
 		boolean exit = false;
@@ -156,7 +160,7 @@ public class Main {
 				System.out.println("Select Student By Typing Student's Name: ");
 
 				for (Student afterselect : students){
-					//ArrayList<Course> tempcourses = grades.get(afterselect);
+					ArrayList<Course> tempcourses = grades.get(afterselect);
 					System.out.println(afterselect.getStudentName());
 				}
 				System.out.println("");
@@ -179,6 +183,7 @@ public class Main {
 
 				}
 				gradesMenu();
+
 				break;
 			}
 			case 2:{
@@ -197,34 +202,38 @@ public class Main {
 			}
 
 			case 3:{
-				System.out.println("Choose A Student: ");
-				
-				for (Student all : students){
-					System.out.println(all.getStudentName());
+				System.out.println("Export grade for 1 student");
+				System.out.println("Select Student By Typing Student's Name: ");
+
+				for (Student afterselect : students){
+					ArrayList<Course> tempcourses = grades.get(afterselect);
+					System.out.println(afterselect.getStudentName());
 				}
-				String input = scanner.next();
-				exportOne(input, input + ".csv");
-				System.out.println("Export Successful!");
 				System.out.println("");
+				String tempstud = scanner.next();
+				exportOne(tempstud, "Export"+tempstud+".csv");
 				gradesMenu();
 				break;
+
 			}
+
+
 
 
 			case 4:{
-				exportAll("AllGrades.csv");
+				exportAll("ExportALL.csv");
 				System.out.println("Export Successful!");
 				System.out.println("");
 				gradesMenu();
 				break;
 			}
-			case 5:{
+
+
+			case 5:
 				// Quit
 				exit = true;
 				System.out.println("You are now exiting the program.");
 				break;
-			}
-			
 			}
 		}
 	}
