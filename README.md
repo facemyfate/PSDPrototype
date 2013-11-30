@@ -29,8 +29,8 @@ Each java file has information needed to Mark, edit and view attendance of speci
 Configuration
 --------------
 - Clone the repository into your computer using this url: https://github.com/facemyfate/PSDSprint1
-- Please ensure that Visual Studio or Eclipse is downloaded into your computer
-- After cloning, import the project into Visual Studio or Eclipse
+- Please ensure that Eclipse is downloaded into your computer
+- After cloning, import the project into Eclipse
 - Start coding and sync latest files into the folder directory. 
 
 Contact
