@@ -36,8 +36,8 @@ Configuration
 Contact
 --------
 If you have any queries, problems, ideas or suggestion, please contact us by email.
-- 2109988G@student.gla.ac.uk
-- 2109992L@student.gla.ac.uk
-- 2110003L@student.gla.ac.uk
-- 2110025T@student.gla.ac.uk
-- 2109930T@student.gla.ac.uk
+- 2109988G@student.gla.ac.uk (Goh Bing Lu)
+- 2109992L@student.gla.ac.uk (Joselyn Lim Shi Ya)
+- 2110003L@student.gla.ac.uk (Low Sing Wee Terence)
+- 2110025T@student.gla.ac.uk (Tay Yong Quan)
+- 2109930T@student.gla.ac.uk (Tey Ting Wen)
