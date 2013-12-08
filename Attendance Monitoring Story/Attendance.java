@@ -5,7 +5,7 @@ public class Attendance {
 	private ArrayList<AttendanceItem> attendance;
 
 	public Attendance (){
-		attendance = new ArrayList<>();
+		attendance = new ArrayList<AttendanceItem>();
 	}
 	public ArrayList<AttendanceItem> getAttendance(){
 		return attendance;

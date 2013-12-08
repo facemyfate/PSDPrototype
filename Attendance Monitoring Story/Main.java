@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Main {
 	static Attendance att = new Attendance();
-	static ArrayList<Student> student = new ArrayList<>();
-	static ArrayList<Course> course = new ArrayList<>();
+	static ArrayList<Student> student = new ArrayList<Student>();
+	static ArrayList<Course> course = new ArrayList<Course>();
 
 	public static void main (String[] args) {
 		// hard code students and courses
@@ -114,7 +114,7 @@ public class Main {
 							int week1 = scanner.nextInt();
 							if ((week1 > 0) && (week1 < 6)){
 								System.out.println("Marking attendance for " + coursestr1 + " of week " + week1);
-								System.out.println("Choose from the options below. \n1.\tpresent \n1.\tabsent \n3.\tmv \n4.\tskip\n");
+								System.out.println("Choose from the options below. \n1.\tpresent \n2.\tabsent \n3.\tmv \n4.\tskip\n");
 								exit = true;
 								case1 = true;
 								w1 = true;
