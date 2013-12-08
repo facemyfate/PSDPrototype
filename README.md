@@ -22,8 +22,10 @@ In Attendance Monitoring Story, it contains
 - Course.java
 - Main.java
 - Student.java
+- example_course.csv
 
-Each java file has information needed to Mark, edit and view attendance of specific students of certain course. 
+Each java file has information needed to Mark, edit and view attendance of specific students of certain course.
+Example_course.csv contains the details needed to imported. 
 
 
 Configuration
