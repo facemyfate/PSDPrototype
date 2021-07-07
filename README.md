@@ -42,4 +42,4 @@ If you have any queries, problems, ideas or suggestion, please contact us by ema
 - Joselyn Lim Shi Ya [2109992L@student.gla.ac.uk]
 - Low Sing Wee Terence [2110003L@student.gla.ac.uk]
 - Tay Yong Quan [2110025T@student.gla.ac.uk]
-- Tey Ting Wen [2109930T@student.gla.ac.uk]
+
